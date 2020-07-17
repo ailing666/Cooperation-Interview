@@ -83,16 +83,16 @@
         ></el-pagination>
       </div>
     </el-card>
-    <subjectAdd ref="subjectAdd"></subjectAdd>
+    <Subject-add ref="SubjectAdd"></Subject-add>
   </div>
 </template>
 <script>
 import { getSubjectList, setSubjectStatus } from "@/api/subject.js";
 // 组件套用组件：1：导入  2：注册  3：使用
-import subjectAdd from "./subjectAdd";
+import SubjectAdd from "./SubjectAdd";
 export default {
   components: {
-    subjectAdd
+    SubjectAdd
   },
   data() {
     return {
@@ -172,12 +172,12 @@ export default {
     add() {
       //调用子组件内的一个属性(isShow)改为true
       // 父调用子  1：在子组件标签上定义一个ref  ref=值  2:访问子组件this===this.$refs.值.isShow=true
-      this.$refs.subjectAdd.isShow = true;
+      this.$refs.SubjectAdd.isShow = true;
     },
     //编辑
     edit(row) {
-      this.$refs.subjectAdd.isShow = true;
-      this.$refs.subjectAdd.form = JSON.parse(JSON.stringify(row));
+      this.$refs.SubjectAdd.isShow = true;
+      this.$refs.SubjectAdd.form = JSON.parse(JSON.stringify(row));
       /*
 堆与栈的存储  
 字符串：原始值 
