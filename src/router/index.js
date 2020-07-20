@@ -1,12 +1,12 @@
 import VueRouter from 'vue-router'
 import Vue from 'vue'
-import login from '@/views/login/login.vue'
-import layout from "@/views/home/layout.vue";
-import business from "@/views/home/business/business.vue"
-import question from "@/views/home/question/question.vue"
-import chart from "@/views/home/chart/chart.vue"
-import subject from "@/views/home/subject/subject.vue"
-import userlist from "@/views/home/userlist/userlist.vue"
+import Login from '@/views/login/login.vue'
+import Layout from "@/views/home/layout.vue";
+import Business from "@/views/home/business/Business.vue"
+import Question from "@/views/home/question/Question.vue"
+import Chart from "@/views/home/chart/Chart.vue"
+import Subject from "@/views/home/subject/Subject.vue"
+import Userlist from "@/views/home/userlist/Userlist.vue"
 
 
 Vue.use(VueRouter)
@@ -21,18 +21,18 @@ const router = new VueRouter({
     , meta: { title: '登录' }
   }, {
     path: "/login",
-    component: login
+    component: Login
     , meta: { title: '登录' }
   }, {
     path: "/layout",
     redirect: "/layout/business",
-    component: layout,
+    component: Layout,
     children: [
-      { path: '/layout/chart', component: chart, meta: { title: '数据概览' } },
-      { path: '/layout/userlist', component: userlist, meta: { title: '用户列表' } },
-      { path: '/layout/question', component: question, meta: { title: '题库列表' } },
-      { path: '/layout/business', component: business, meta: { title: '企业列表' } },
-      { path: '/layout/subject', component: subject, meta: { title: '学科列表' } },
+      { path: '/layout/chart', component: Chart, meta: { title: '数据概览' } },
+      { path: '/layout/userlist', component: Userlist, meta: { title: '用户列表' } },
+      { path: '/layout/question', component: Question, meta: { title: '题库列表' } },
+      { path: '/layout/business', component: Business, meta: { title: '企业列表' } },
+      { path: '/layout/subject', component: Subject, meta: { title: '学科列表' } },
     ]
   }]
 })

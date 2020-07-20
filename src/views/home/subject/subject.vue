@@ -70,14 +70,14 @@
                     </el-pagination>
                 </div>
             </el-card>
-            <subjectAdd ref="subjectAdd" :modeSon="modeFather" @sonSearch="search"></subjectAdd>
+            <SubjectAdd ref="subjectAdd" :modeSon="modeFather" @sonSearch="search"></SubjectAdd>
         </div>
     </div>
 </template>
 
 <script>
 import { getSubjectList, setSubjectStatus, subjectDel } from "@/api/subject.js";
-import subjectAdd from "./subjectAdd.vue";
+import SubjectAdd from "./SubjectAdd";
 export default {
     data() {
         return {
@@ -101,7 +101,7 @@ export default {
         };
     },
     components: {
-        subjectAdd
+        SubjectAdd
     },
     methods: {
         getData() {

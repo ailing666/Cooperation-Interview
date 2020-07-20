@@ -2,7 +2,7 @@
 import axios from 'axios'
 // 单独引入 element的message  Message代表this.$message
 import { Message } from 'element-ui'
-import { getLocal, removeLocal } from '@/utils/local.js'
+import { getLocal, removeToken } from '@/utils/local.js'
 // 导入路由
 import router from '@/router/index.js'
 // 创建axios副本
@@ -32,7 +32,7 @@ _fetch.interceptors.response.use(
       // 如果是206,说明是非法请求
     } else if (response.data.code == 206) {
       // 删除token
-      removeLocal()
+      removeToken()
       //跳转至登陆页
       router.push('/login')
       // 抛出异常
